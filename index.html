@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title> eu amo celebrar sua vida.  ✨</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="stars stars-1"></div>
+  <div class="stars stars-2"></div>
+  <div class="nebula nebula-1"></div>
+  <div class="nebula nebula-2"></div>
+
+  <canvas id="particlesCanvas"></canvas>
+
+  <div id="unlockFlash" class="unlock-flash"></div>
+  <div id="portalTransition" class="portal-transition">
+    <div class="portal-ring ring-a"></div>
+    <div class="portal-ring ring-b"></div>
+    <div class="portal-ring ring-c"></div>
+    <p class="portal-text">Aventura desbloqueada ✨</p>
+  </div>
+
+  <section id="gateScreen" class="screen active">
+    <div class="space-scene">
+      <div class="planet planet-1"></div>
+      <div class="planet planet-2"></div>
+      <div class="ring ring-1"></div>
+
+      <div class="rocket-wrap">
+        <div class="rocket">
+          <div class="rocket-top"></div>
+          <div class="rocket-body">
+            <div class="rocket-window"></div>
+            <div class="rocket-wing left"></div>
+            <div class="rocket-wing right"></div>
+          </div>
+          <div class="rocket-engine"></div>
+          <div class="rocket-fire"></div>
+        </div>
+      </div>
+
+      <div class="gate-card glass glow-3d">
+        <p class="eyebrow">missão niver de pripri</p>
+        <h1> uma aventura pelo espaço e do coração de lulu p/ pripri </h1>
+        <p class="gate-text">
+          Para embarcar nessa viagem pelo universo da nossa amizade, digite a senha secreta.
+        </p>
+
+        <div class="password-hint-box">
+          <span class="hint-label">senha:</span>
+          <strong>eusouamadaporlulu</strong>
+        </div>
+
+        <div class="password-wrap">
+          <input
+            id="passwordInput"
+            type="text"
+            placeholder="Digite a senha para embarcar"
+            autocomplete="off"
+          />
+          <button id="unlockBtn">Desbloquear aventura</button>
+        </div>
+
+        <p id="passwordMessage" class="password-message"></p>
+      </div>
+    </div>
+  </section>
+
+  <section id="mainScreen" class="screen">
+    <header class="hero glass glow-3d">
+      <div class="hero-copy">
+        <p class="eyebrow"> feliz vida, meu amor!  ✦</p>
+        <h2>para a minha pepê! </h2>
+        <p>
+          Uma experiência feita para celebrar sua vida, nossa amizade e tudo o que ainda vamos viver juntas.
+        </p>
+      </div>
+
+      <div class="hero-badge">
+        <span>momo</span>
+        <span>neneca</span>
+        <span>pitoquinho</span>
+        <span>joia preciosa</span>
+      </div>
+    </header>
+
+    <main class="dashboard">
+      <aside class="sidebar glass glow-3d">
+        <h3>Navegação</h3>
+        <nav class="tab-buttons">
+          <button class="tab-btn active" data-tab="playlistTab">musicas que eu lembro de você 🫀 </button>
+          <button class="tab-btn" data-tab="textoTab">meu textinho para seu coração 🌻 </button>
+          <button class="tab-btn" data-tab="fotos1Tab"> fotos de momentos mais que especiais </button>
+          <button class="tab-btn" data-tab="fotos2Tab"> sendo feliz com pripri </button>
+          <button class="tab-btn" data-tab="desejosTab"> metas juntinhas </button>
+          <button class="tab-btn" data-tab="contadorTab"> tempo de amizade? claro </button>
+        </nav>
+      </aside>
+
+      <section class="content-area">
+        <article id="playlistTab" class="tab-panel active glass glow-3d">
+          <div class="panel-title-wrap">
+            <p class="eyebrow">sonzinho p melhorar a viagem </p>
+            <h3>playlist para deixar tocando enquanto vc experiencia <3 </h3>
+            <p class="panel-description">
+              playlist inteira ou musica individual 
+            </p>
+          </div>
+
+          <div class="music-layout">
+            <div class="music-player-card">
+              <div class="music-top-actions">
+                <button class="music-mode-btn active" data-mode="playlist">Playlist completa</button>
+                <button class="music-mode-btn" data-mode="single">Escolher música</button>
+              </div>
+
+              <div class="player-shell">
+                <iframe
+                  id="musicFrame"
+                  src="https://www.youtube.com/embed/videoseries?list=PLrbfT4u9TnqBvzNfvsaRS1poM_sYZMMEN"
+                  title="Playlist de aniversário"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen>
+                </iframe>
+              </div>
+            </div>
+
+            <div id="songSelector" class="song-selector hidden">
+              <h4>Escolha uma música</h4>
+              <div class="song-list">
+                <button class="song-btn active" data-video="videoseries?list=PLrbfT4u9TnqBvzNfvsaRS1poM_sYZMMEN">Tocar playlist completa</button>
+                <button class="song-btn" data-video="s8XIgR5OGJc">Música 1</button>
+                <button class="song-btn" data-video="kPa7bsKwL-c">Música 2</button>
+                <button class="song-btn" data-video="M7lc1UVf-VE">Música 3</button>
+                <button class="song-btn" data-video="ysz5S6PUM-U">Música 4</button>
+                <button class="song-btn" data-video="ScMzIvxBSi4">Música 5</button>
+              </div>
+
+              <p class="selector-tip">
+                caso não funcione: https://www.youtube.com/watch?v=rKJBgh7qc58&list=PLrbfT4u9TnqBvzNfvsaRS1poM_sYZMMEN (vc tem yt premium kakakaka)
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <article id="textoTab" class="tab-panel glass glow-3d">
+          <div class="panel-title-wrap">
+            <p class="eyebrow"> cartinha de amor </p>
+            <h3>Meu texto de aniversário para você</h3>
+          </div>
+
+          <div class="letter-card">
+            <p>Meu amorzinho.</p>
+
+            <p>
+              Queria que você estivesse na minha pele para sentir como é bom ser sua amiga. Deus pensou em mim quando criou você, com certeza. Ele criou nossa amizade para a gente saber mais dele. Gêmeas de hotel na Paraíba, gêmeas de maternidade, dividimos o mesmo colégio… Tantas coincidências, tantas coisas que nos unem e tantas coisas que nos fazem crescer.
+            </p>
+
+            <p>
+              Quero estar com você todos os dias até o Senhor me permitir essa maravilha. Eu quero ver sua vida avançando, quero ver você sendo amada, quero ver você usufruindo de todas as bênçãos que o Senhor vai derramar e quero te ver sendo e exalando o bom perfume dele sempre.
+            </p>
+
+            <p>
+              Eu amo acordar e ter sua mensagem, amo sorrir, amo nosso silêncio, amo poder ser autistas, ah/sd e tdah contigo. Eu sou eu quando tô contigo. Obrigada por me ajudar a deixar para trás dores e tantas casquinhas. Obrigada pelos seus ouvidos, pelos seus ombros, por sua vida, por seu amor e por seu cuidado sobre mim. Eu sinto que Deus me ama quando você demonstra esse afeto que exala do seu coração. Obrigada por me tirar de todas as minhas zonas de conforto, eu amo esse ato de amor (de longe um dos meus preferidos).
+            </p>
+
+            <p>
+              Eu sou sua fã, sou sua admiradora (não tão secreta), sou apaixonada por você, quero ser sua incentivadora, cuidar de você e do seu coração. És uma joia preciosa para mim e eu sei que nada pode impedir o que o Senhor está fazendo nas nossas vidas.
+            </p>
+
+            <p>
+              Sua voz é doce, você é muito amada, você é linda, cheirosa (e como é…), auras 100%, 100% magnética, presença, incrível e eu te acho gigante, te acho genial, te acho surreal. Eu ficaria elogiando você d+ …. (se quiser mais é só pedir no privado que a mãe fornece). Te amo demais!
+            </p>
+
+            <p>
+              Falo tudo que eu sinto no dia a dia, mas uso esse espacinho para te validar ainda mais.
+            </p>
+
+            <div class="verse-box">
+              <p><strong>“Perfume e incenso trazem alegria ao coração; do conselho sincero do homem nasce uma bela amizade.”</strong> Pv 27:9</p>
+              <p><strong>“Assim como o ferro afia o ferro, o homem afia o seu companheiro.”</strong> Pv 27:17</p>
+            </div>
+
+            <p>
+              Eu estou com você e não solto sua mão. Você é minha momo, neneca, pp, sisis, pitoquinho, etc…
+            </p>
+
+            <p>
+                Dias melhores virão... Viagens, cafés superfaturados, marido, europa, filhos, netos, velhice, tudo isso e muito mais eu quero viver com você. Quero ser sua amiga para sempre, quero ser aquela que te ajuda a realizar seus sonhos, quero ser aquela que te ajuda a superar seus medos, quero ser aquela que te ajuda a enxergar o quanto você é incrível e merece tudo de melhor.
+              </p>
+
+            <p>
+              Eu te amo, Prizinha! Tô aqui por você e com você.
+            </p>
+          </div>
+        </article>
+
+        <article id="fotos1Tab" class="tab-panel glass glow-3d">
+          <div class="panel-title-wrap">
+            <p class="eyebrow"> nossos momentinhos, né?</p>
+            <h3> viajar, viver, sorrir e ser sua amiga é baummmm demais <3 </h3>
+          </div>
+          <div id="gallery1" class="gallery-grid"></div>
+        </article>
+
+        <article id="fotos2Tab" class="tab-panel glass glow-3d">
+          <div class="panel-title-wrap">
+            <p class="eyebrow"> vivendo y vivendo w/ my sisis </p>
+            <h3> to aqui p provar que ser sua amiga é uma dádiva </h3>
+          </div>
+          <div id="gallery2" class="gallery-grid"></div>
+        </article>
+
+        <article id="desejosTab" class="tab-panel glass glow-3d">
+          <div class="panel-title-wrap">
+            <p class="eyebrow">sonhos juntas</p>
+            <h3>Lista de desejos para realizarmos juntas</h3>
+          </div>
+
+          <p class="todo-tip">
+         adicione os itens que você quer, printa e me manda <3 
+          </p>
+
+          <div class="todo-add-wrap">
+            <input id="todoInput" type="text" placeholder="Adicionar novo sonho para viver juntas" />
+            <button id="addTodoBtn">Adicionar</button>
+          </div>
+
+          <ul id="todoList" class="todo-list"></ul>
+        </article>
+
+        <article id="contadorTab" class="tab-panel glass glow-3d">
+          <div class="panel-title-wrap">
+            <p class="eyebrow"> tempo de amizade </p>
+            <h3> que honra poder ser sua amiga por: </h3>
+          </div>
+
+          <div class="counter-highlight">
+            <p class="counter-sentence">
+              Já faz <span id="years">0</span> anos, <span id="days">0</span> dias,
+              <span id="hours">0</span> horas, <span id="minutes">0</span> minutos e
+              <span id="seconds">0</span> segundos sendo amiga da melhor do mundo.
+            </p>
+          </div>
+
+          <div class="counter-cards">
+            <div class="counter-card"><span id="yearsCard">0</span><small>anos</small></div>
+            <div class="counter-card"><span id="daysCard">0</span><small>dias</small></div>
+            <div class="counter-card"><span id="hoursCard">0</span><small>horas</small></div>
+            <div class="counter-card"><span id="minutesCard">0</span><small>minutos</small></div>
+            <div class="counter-card"><span id="secondsCard">0</span><small>segundos</small></div>
+          </div>
+
+          <p class="counter-date">
+            sou mais feliz desde aquela coxinha:  <strong>02/04/2024</strong>
+          </p>
+        </article>
+      </section>
+    </main>
+  </section>
+
+  <div id="photoModal" class="photo-modal">
+    <button id="closeModal" class="close-modal">×</button>
+    <img id="modalImage" src="" alt="Foto ampliada">
+    <p id="modalCaption"></p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
